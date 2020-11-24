@@ -49,33 +49,45 @@ console.log(listUserNumber);
 var score = document.getElementById("score").innerHTML = "Il tuo punteggio è" + " " + (listUserNumber.length);*/
 
 //**************************** MY SOLUTION ****************************
+//Functions
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function includes(array, number) {
+  if (array.includes(number) == false) {
+    return array.push(number);
+  }
+}
+//Il computer deve generare 16 numeri casuali tra 1 e 100. I numeri non possono essere duplicati.
 
 listPcNumber = [];
 
 while (listPcNumber.length < 16) {
-  var pcNumber = Math.floor(Math.random() * (100 - 1) + 1);
-  if (listPcNumber.includes(pcNumber) == false) {
-    listPcNumber.push(pcNumber);
-  }
+  var pcNumber = randomNumber(1, 100);
+  includes(listPcNumber, pcNumber)
 }
 console.log(listPcNumber);
 
-listUserNumber = [];
-wrongNumber = listPcNumber.includes(userNumber);
+//In seguito deve chiedere all’utente di inserire un numero alla volta, sempre compreso tra 1 e 100. L’utente non può inserire più volte lo stesso numero.
 
-do {
-  var userNumber = Number(prompt("Inserisci un numero da 1 a 100"));
 
-  if (wrongNumber == true) {
-    console.log("Hai perso");
-  } else if (listUserNumber.includes(userNumber) == false) {
-    listUserNumber.push(userNumber);
-  } else if (listUserNumber.includes(userNumber) == true) {
-    console.log("Numero già inserito.");
-  } else {
-    console.log("Hai vinto!");
-  }
-} while (listUserNumber.length < 84 && wrongNumber == false)
-console.log("il tuo punteggio è" + " " + listUserNumber.length);
+// listUserNumber = [];
+// wrongNumber = listPcNumber.includes(userNumber);
+//
+// do {
+//   var userNumber = Number(prompt("Inserisci un numero da 1 a 100"));
+//
+//   if (wrongNumber == true) {
+//     console.log("Hai perso");
+//   } else if (listUserNumber.includes(userNumber) == false) {
+//     listUserNumber.push(userNumber);
+//   } else if (listUserNumber.includes(userNumber) == true) {
+//     console.log("Numero già inserito.");
+//   } else {
+//     console.log("Hai vinto!");
+//   }
+// } while (listUserNumber.length < 84 && wrongNumber == false)
+// console.log("il tuo punteggio è" + " " + listUserNumber.length);
 
 //********************************************************************
