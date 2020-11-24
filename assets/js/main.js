@@ -1,10 +1,12 @@
+//************************** FABIO SOLUTION ***************************
+
 //Il computer deve generare 16 numeri casuali tra 1 e 100.I numeri non possono essere duplicati.
-function getRndInteger(min, max) {
+/*function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var listPcNumber = [];
-while (listPcNumber.length !== 16) {
+while (listPcNumber.length < 16) {
   var pcNumber = getRndInteger(1, 100);
   if (! inArray(listPcNumber, pcNumber)) {
     listPcNumber.push(pcNumber)
@@ -29,7 +31,7 @@ var probability = 100 - 16;
 for (var i = 0; i <= probability; i++) {
   var userNumber = Number(prompt("Inserisci un mumero tra 1 e 100"));
   if (inArray(listPcNumber, userNumber)) {
-    console.log("Game Over!");
+    var lose = document.getElementById("win_or_lose").innerHTML = "GAME OVER!";
     break;
   }
 
@@ -44,14 +46,11 @@ for (var i = 0; i <= probability; i++) {
 console.log(listUserNumber);
 
 //Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-
-
-
-console.log("Il tuo punteggio è" + " " + listUserNumber);
+var score = document.getElementById("score").innerHTML = "Il tuo punteggio è" + " " + (listUserNumber.length);*/
 
 //**************************** MY SOLUTION ****************************
 
-/*listPcNumber = [];
+listPcNumber = [];
 
 while (listPcNumber.length < 16) {
   var pcNumber = Math.floor(Math.random() * (100 - 1) + 1);
@@ -77,6 +76,6 @@ do {
     console.log("Hai vinto!");
   }
 } while (listUserNumber.length < 84 && wrongNumber == false)
-console.log("il tuo punteggio è" + " " + listUserNumber.length);*/
+console.log("il tuo punteggio è" + " " + listUserNumber.length);
 
 //********************************************************************
