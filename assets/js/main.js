@@ -1,5 +1,5 @@
 //**************************** MY SOLUTION ***************************
-//Functions
+//Utility Functions
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -9,7 +9,7 @@ function includes(array, number) {
 }
 
 function requestNumber() {
-  return Number(prompt("Inserisci un numero da 1 a 100"));
+  return Number(prompt("Inserisci un numero da 1 a" + " " + maxProbability));
 }
 // --------------------------- BONUS TRACK --------------------------
 var levelChoose = Number(prompt("Iserisci: 0 = Livello FACILE, 1 = Livello MEDIO, 2 = Livello DIFFICILE"));
@@ -18,14 +18,14 @@ var levelMedium = 1;
 var levelHard = 2;
 
 if (levelChoose === levelEasy) {
-  var pcNumber = randomNumber(1, 100);
-  var probability = 100 - 16;
+  var maxNumber = 100;
+  var maxProbability = 100;
 } else if (levelChoose === levelMedium) {
-  var pcNumber = randomNumber(1, 80);
-  var probability = 80 - 16;
+  var maxNumber = 80;
+  var maxProbability = 80;
 } else if (levelChoose === levelHard) {
-  var pcNumber = randomNumber(1, 50);
-  var probability = 50 - 16;
+  var maxNumber = 50;
+  var maxProbability = 50;
 }
 // __________________________________________________________________
 //Il computer deve generare 16 numeri casuali tra 1 e 100. I numeri non possono essere duplicati.
@@ -33,6 +33,7 @@ if (levelChoose === levelEasy) {
 var listPcNumber = [];
 
 while (listPcNumber.length < 16) {
+  var pcNumber = randomNumber(1, maxNumber);
   if (includes(listPcNumber, pcNumber) == false) {
     listPcNumber.push(pcNumber);
   }
@@ -41,6 +42,7 @@ console.log(listPcNumber);
 
 //In seguito deve chiedere all’utente di inserire un numero alla volta, sempre compreso tra 1 e 100. L’utente non può inserire più volte lo stesso numero.
 var listUserNumber = [];
+var probability = maxProbability - 16;
 
 while (listUserNumber.length < probability) {
   var userNumber = requestNumber();
