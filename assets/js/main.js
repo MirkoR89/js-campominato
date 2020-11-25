@@ -17,15 +17,30 @@ var levelEasy = 0;
 var levelMedium = 1;
 var levelHard = 2;
 
-if (levelChoose === levelEasy) {
-  var maxNumber = 100;
-  var maxProbability = 100;
-} else if (levelChoose === levelMedium) {
-  var maxNumber = 80;
-  var maxProbability = 80;
-} else if (levelChoose === levelHard) {
-  var maxNumber = 50;
-  var maxProbability = 50;
+// if (levelChoose === levelEasy) {
+//   var maxNumber = 100;
+//   var maxProbability = 100;
+// } else if (levelChoose === levelMedium) {
+//   var maxNumber = 80;
+//   var maxProbability = 80;
+// } else if (levelChoose === levelHard) {
+//   var maxNumber = 50;
+//   var maxProbability = 50;
+// }
+
+switch (levelChoose) {
+  case levelEasy:
+    var maxProbability = 100;
+    var maxNumber = 100;
+    break;
+  case levelMedium:
+    var maxProbability = 80;
+    var maxNumber = 80;
+    break;
+  case levelMedium:
+    var maxProbability = 80;
+    var maxNumber = 80;
+    break;
 }
 // __________________________________________________________________
 //Il computer deve generare 16 numeri casuali tra 1 e 100. I numeri non possono essere duplicati.
